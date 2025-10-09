@@ -73,7 +73,7 @@ if __name__ == '__main__':
         print(combinaison_pigee)
 
         placer_jeton() #TODO: créer fonction
-        bingo = bingo_gagnant() #TODO: créer fonction
+        bingo = bingo_gagnant(carte_joueur) #TODO: créer fonction
 
         if bingo == "BINGO gagnant!":
             break
@@ -83,16 +83,9 @@ if __name__ == '__main__':
 
 
 #Fonction qui détermine si on a une ligne BINGO gagnante
-def bingo_gagnant(grille, B: int,I: int,N: int,G :int,O: int, jeton :int ) -> None:
+def bingo_gagnant(grille):
     """
     Fonction qui détermine si on a une ligne BINGO gagnante
-    :param grille: grille de BINGO
-    :param B: colonne de grille
-    :param I: colonne de grille
-    :param N: colonne de grille
-    :param G: colonne de grille
-    :param O: colonne de grille
-    :param jeton: le jeton , x , placer sur la grille BINGO,
     :return: ???
     """
     x = True
@@ -124,10 +117,6 @@ def bingo_gagnant(grille, B: int,I: int,N: int,G :int,O: int, jeton :int ) -> No
             print(x in combinaison_pigee)
 
         break
-
-
-bingo_gagnant(carte_joueur, combinaison_pigee, jeton)
-
 
 #Fonction placer le jeton
 ####
