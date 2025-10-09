@@ -17,19 +17,66 @@ Fonction qui détermine si on a une ligne BINGO gagnante
 Fonction qui place un jeton sur la carte BINGO
 
 """
+from random import randrange
+
+"""
+Pseudocode :
+importer random 
+
+Carte bingo du joueur = fonction qui génère une carte unique pour le joueur 
+
+Boucle while :
+    Combinaison lettre-chiffre = combinaison random choisie à partir de la liste de combinaisons (ex: B-12, I-18, ...)
+    Afficher la carte BINGO du joueur
+    Afficher la combinaison lettre-chiffre pigée
+    
+    Utiliser la fonction placer_jeton(combinaison_pigee: str, carte_joueur: list[list[str and int]]) -> list[list[str and int]]:
+        Demander au joueur de placer son jeton au bon endroit (choisir la bonne colonne et la bonne ligne)
+        Si la combinaison n'existe pas dans la carte du joueur, le joueur doit répondre avec 'x' (ou autre symbole)
+        Si le joueur ne choisit pas la bonne réponse, on lance un message d'erreur 
+        Si le joueur choisit le bon endroit, on remplace le chiffre assigné à cette case par un jeton 
+        (o, *, peu importe)
+        Return la carte bingo du joueur avec son nouveau jeton (ou inchangée si la combinaison n'existe pas 
+        dans la carte du joueur) 
+    
+    Utiliser la fonction bingo_gagnant(carte_joueur: list[list[str and int]]) -> str:
+        Pour chaque colonne de la liste carte_joueur:
+            Si indexe y == str, 
+                return "bingo gangnant"
+        Pour chaque ligne de la liste carte_joueur:
+            Si indexe y == str, 
+                return "bingo gangnant"
+        Pour chaque ligne diagonale dans la liste carte_joueur:
+            Si indexe y == str, 
+                return "bingo gangnant"
+    ^^^^^^^^ à terminer plus tard
+    
+    if bingo = "bingo gangnant":
+        break    
+    
+    
+    
+  
+"""
+
 from module import *
-#Données d'entrée
+import random
 
-#Données de sortie
-liste_combinaisons = creer_liste_combinaisons()
-carte_joueur = generer_carte(liste_combinaisons)
+if __name__ == '__main__':
+    liste_combinaisons = creer_liste_combinaisons()
+    carte_joueur = generer_carte(liste_combinaisons)
 
-combinaison_pigee = random.choice(liste_combinaisons)
+    while True:
+        combinaison_pigee = random.choice(liste_combinaisons)
+        for ligne in carte_joueur:
+            print(ligne)
+        print(combinaison_pigee)
 
+        placer_jeton() #TODO: créer fonction
+        bingo = bingo_gagnant() #TODO: créer fonction
 
-
-
-
+        if bingo == "BINGO gagnant!":
+            break
 
 
 
@@ -48,38 +95,41 @@ def bingo_gagnant(grille, B: int,I: int,N: int,G :int,O: int, jeton :int ) -> No
     :param jeton: le jeton , x , placer sur la grille BINGO,
     :return: ???
     """
-# print pour afficher la grille
-grille = [
+    x = True
 
-    ["B", "I","N","G","O" ],
-    ["14", "18","40","52","65"],
-    ["6", "27", "45","59","66"],
-    ["5", "17", "*","50", "73"],
-    ["9","25", "31","57", "62"],
-    ["4","21", "39","48", "67"],
-]
-#remplacer cases par "x"
-jeton = input("Place le jeton à la case nommer", )
+    # print pour afficher la grille
+    grille = [
 
-#ligne gagnante
-import random
-if bingo_gagnant(grille):
-    for ligne in grille:
-        print(ligne)
-elif bingo_gagnant(grille, jeton):
-    for colonne in grille:
-        print(colonne)
-else :
-    print(grille)
+        ["B", "I","N","G","O" ],
+        [],
+        [],
+        [],
+        [],
+        [],
+    ]
+    #remplacer cases par "x"
+    jeton = input("Place le jeton à la case nommer", )
 
-if bingo_gagnant(carte_joueur):
-    print("BINGO gagnant !")
-else :
-    print("Pas encore de BINGO.")
+    #ligne gagnante
+
+    while True:
+        if x * 5  in liste_combinaisons:
+            print("BINGO gagnant!")
+        elif randrange(0 , 60) == 0:
+            input(random.choice(grille))
+        elif random.choice(grille) in carte_joueur:
+            input(x) in grille
+            print("Pas encore de BINGO.")
+        else :
+            print(x in combinaison_pigee)
+
+        break
 
 
-if random.random():
+bingo_gagnant(carte_joueur, combinaison_pigee, jeton)
 
+
+#Fonction placer le jeton
 
 
 
