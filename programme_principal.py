@@ -83,11 +83,15 @@ if __name__ == '__main__':
 
 
 #Fonction qui détermine si on a une ligne BINGO gagnante
-def bingo_gagnant(grille):
+def bingo_gagnant(grille, B: int,I: int,N: int,G :int,O: int, jeton :int ) -> None:
     """
     Fonction qui détermine si on a une ligne BINGO gagnante
     :param grille: grille de BINGO
-    :param carte_joueur: carte de BINGO
+    :param B: colonne de grille
+    :param I: colonne de grille
+    :param N: colonne de grille
+    :param G: colonne de grille
+    :param O: colonne de grille
     :param jeton: le jeton , x , placer sur la grille BINGO,
     :return: ???
     """
@@ -126,7 +130,7 @@ bingo_gagnant(carte_joueur, combinaison_pigee, jeton)
 
 
 #Fonction placer le jeton
-#
+####
 
 
 
