@@ -126,7 +126,7 @@ bingo_gagnant(carte_joueur, combinaison_pigee, jeton)
 
 
 #Fonction placer le jeton
-####
+#
 
 
 
