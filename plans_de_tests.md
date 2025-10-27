@@ -14,9 +14,10 @@
 
 #Plan de test pour la fonction bingo_gagnant()
 
-| carte_joueur                       | resultat_attendu        | resultat_obtenu |
-|------------------------------------|-------------------------|-----------------|
-| (ligne horizontale remplie de str) | "BINGO gagnant!"        |                 |
-| (ligne verticale remplie de str)   | "BINGO gagnant!"        |                 |
-| (ligne diagonale remplie de str)   | "BINGO gagnant!"        |                 |
-| (Aucune de ces options)            | "Pas encore de BINGO."  |                 |
+| carte_joueur                                      | resultat_attendu        | resultat_obtenu |
+|---------------------------------------------------|-------------------------|-----------------|
+| (ligne horizontale remplie de str)                | "BINGO gagnant!"        |                 |
+| (ligne verticale remplie de str)                  | "BINGO gagnant!"        |                 |
+| (ligne diagonale remplie de str, gauche à droite) | "BINGO gagnant!"        |                 |
+| (ligne diagonale remplie de str, droite à gauche) | "BINGO gagnant!"        |                 |
+| (Aucune de ces options)                           | "Pas encore de BINGO."  |                 |

@@ -1,6 +1,6 @@
 import random
 #Wilo
-def creer_liste_combinaisons() -> list:
+def creer_liste_combinaisons() -> list[str]:
     """
     Fonction qui crée une liste avec toutes les combinaisons lettres-chiffres possibles à piger dans un
     jeu de BINGO.
@@ -17,7 +17,7 @@ def creer_liste_combinaisons() -> list:
             liste_combinaisons.append(f"{lettre}-{nombre}")
         index += 1
     return liste_combinaisons
-def generer_carte(liste: list) -> list:
+def generer_carte(liste: list[str]) -> list[list]:
     """
     Fonction qui génère une carte BINGO aléatoire pour le joueur
     :param liste: liste de combinaisons
