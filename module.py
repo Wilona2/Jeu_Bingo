@@ -51,3 +51,41 @@ def generer_carte(liste: list[str]) -> list[list]:
     carte_joueur[3].pop(2)
     carte_joueur[3].insert(2, "*")
     return carte_joueur
+
+#Maryam
+def placer_jeton(combi: str, grille: list[list[bool]]):
+    """
+    Fonction pour placer le jeton x sur la grille(liste2D) BINGO
+    :param x: le jeton a placer sur la grille
+    :param grille: la grille BINGO
+    :param combi : combinaison
+    :return: la carte bingo du joueur avec modification (jeton)
+    """
+    x = 'x'
+
+    # Afficher le jeton sur la grille
+    for x in grille:
+        print(x)
+
+    if combi in grille:
+        return carte_joueur  # nouvelle carte avec le jeton
+    else:
+        print("pas de combinaison valide pour ce tour ")
+        return carte_joueur
+
+
+"""
+def remplacer_case(l: int, c: int, jeton: str, grille: list[list[str]]) -> None:
+
+    Fonction pour remplacer les tirets par x ou o
+    :param l: ligne
+    :param c: colone
+    :param jeton: x ou o
+    :param grille: grille de tictactoe
+
+    grille[l][c] = jeton
+
+    #afficher la grille
+    for ligne in grille:
+        print(ligne)
+"""

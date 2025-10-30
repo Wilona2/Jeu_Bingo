@@ -177,8 +177,18 @@ def bingo_gagnant(grille):
 
         break
 
-#Fonction placer le jeton
-####
+"""
+#si on rempli une ligne ou colone, gagner ou terminer la partie
+    gagnant = ""
+    for i in range(3):
+        if grille[i][0] == grille[i][1] == grille[i][2] != "_": #ligne
+            gagnant = grille[i][0]
+        elif grille[0][i] == grille[1][i] == grille[2][i] != "_": #colone
+            gagnant = grille[0][i]
 
-
-
+    #gagner en diagonale
+    if grille[0][0] == grille [1][1] == grille[2][2] != "_":
+        gagnant = grille[0][0]
+    elif grille[0][2] == grille [1][1] == grille[2][0] != "_":
+        gagnant = grille[0][2]
+"""
