@@ -106,6 +106,7 @@ Carte bingo du joueur = fonction generer_carte(liste combinaisons)
     
 Boucle while :
     Combinaison lettre-chiffre = random.choice(liste combinaisons)
+    Retirer la combinaison de la liste de combinaisons
     Afficher la carte BINGO du joueur
     Afficher la combinaison lettre-chiffre pigée
     
@@ -127,11 +128,13 @@ if __name__ == '__main__':
 
     while True:
         combinaison_pigee = random.choice(liste_combinaisons)
+        liste_combinaisons.remove(combinaison_pigee)
+
         for ligne in carte_joueur:
             print(ligne)
         print(combinaison_pigee)
 
-        placer_jeton()
+        placer_jeton(combinaison_pigee, carte_joueur)
         bingo = bingo_gagnant(carte_joueur) #TODO: créer fonction
 
         if bingo == "BINGO gagnant!":
