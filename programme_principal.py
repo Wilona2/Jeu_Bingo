@@ -38,7 +38,7 @@ creer_liste_combinaisons() -> list:
             Ajouter lettre + chiffre à la liste de combinaisons
         Index de la liste lettre +=1
     Return liste combinaisons
-
+ 
 generer_carte(liste: list) -> list:
     Fonction qui génère une carte BINGO aléatoire pour le joueur
     :param liste: liste de combinaisons
@@ -131,7 +131,7 @@ if __name__ == '__main__':
             print(ligne)
         print(combinaison_pigee)
 
-        placer_jeton() #TODO: créer fonction
+        placer_jeton()
         bingo = bingo_gagnant(carte_joueur) #TODO: créer fonction
 
         if bingo == "BINGO gagnant!":
@@ -170,7 +170,7 @@ def bingo_gagnant(grille):
         elif randrange(0 , 60) == 0:
             input(random.choice(grille))
         elif random.choice(grille) in carte_joueur:
-            input(x) in grille
+            input() in grille
             print("Pas encore de BINGO.")
         else :
             print(x in combinaison_pigee)
