@@ -53,7 +53,7 @@ def generer_carte(liste: list[str]) -> list[list]:
     return carte_joueur
 
 #Maryam
-def placer_jeton(combi: str, grille: list[list[bool]]):
+def placer_jeton(combi: str, grille: list[list[bool]], carte_joueur:str):
     """
     Fonction pour placer le jeton x sur la grille(liste2D) BINGO
     :param x: le jeton a placer sur la grille
@@ -68,7 +68,7 @@ def placer_jeton(combi: str, grille: list[list[bool]]):
         print(x)
 
     if combi in grille:
-        return carte_joueur  # nouvelle carte avec le jeton
+        return carte_joueur # nouvelle carte avec le jeton
     else:
         print("pas de combinaison valide pour ce tour ")
         return carte_joueur

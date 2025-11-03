@@ -145,12 +145,21 @@ if __name__ == '__main__':
 
 
 #Fonction qui détermine si on a une ligne BINGO gagnante
-def bingo_gagnant(grille):
-    """
+def bingo_gagnant(carte_joueur :list[list[str and int]] , colonne_gagnante: list[str and int] , rangee_gagnate: list[str and int]):
+    """"
     Fonction qui détermine si on a une ligne BINGO gagnante
-    :return: ???
+    :param colonne_gagnante:
+    :param rangee_gagnate:
+    :param carte_joueur: la carte BINGO du oueur
+    :return: "BINGO gagnant!" ou "Pas encore de BINGO."
     """
-    x = True
+    gagner = True
+
+   if colonne_joueur in carte_joueur :
+
+
+
+    bingo_gagnant()#Appel de la fonction
 
     # print pour afficher la grille
     grille = [
