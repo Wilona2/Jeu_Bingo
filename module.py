@@ -89,3 +89,96 @@ def remplacer_case(l: int, c: int, jeton: str, grille: list[list[str]]) -> None:
     for ligne in grille:
         print(ligne)
 """
+
+#Fonction qui détermine si on a une ligne BINGO gagnante
+def bingo_gagnant(c_joueur :list[list]):
+    """"
+    Fonction qui détermine si on a une ligne BINGO gagnante
+    :param colonne_gagnante:
+    :param rangee_gagnate:
+    :param c_joueur: la carte BINGO du oueur
+    :return: "BINGO gagnant!" ou "Pas encore de BINGO."
+    """
+    x = "x"
+
+    #Ligne Horizontale
+    for i in range(5):
+        if c_joueur[i][0] == str and c_joueur[i][1] == str and c_joueur[i][2] == str and c_joueur[i][3] == str and c_joueur[i][4] == str :
+            colonne_gagnante = True
+        else :
+            colonne_gagnante = False
+
+
+    #Ligne Vertical
+    for i in range(5):
+        if c_joueur[0][i] == str and c_joueur[1][i] == str and c_joueur[2][0] == str and c_joueur[3][0] == str and c_joueur[4][0] == str :
+            rangee_gagnate = True
+        else :
+           rangee_gagnate = False
+
+    #Ligne Diagonal gauche:
+    if c_joueur[4][4] == str and c_joueur[3][3] == str and c_joueur[2][2] == str and c_joueur[1][1] == str and c_joueur[0][0] == str :
+        diagonale_gagnante = True
+    else:
+        diagonale_gagnante = False
+
+    #Ligne Diagonale droite:
+    if c_joueur[0][5] == str and c_joueur[2][4] == str and c_joueur[3][3] == str and c_joueur[2][3]== str and c_joueur[1][4] :
+        diagonale_gagnante = True
+    else :
+        diagonale_gagnante = False
+
+
+
+     #Colonne Ganante
+    if colonne_gagnante == True :
+        return "BINGO gagant!"
+    else :
+        return "Pas encore de BINGO."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""
+ bingo_gagnant()   #Appel de la fonction
+
+# print pour afficher la grille
+grille = [
+
+    ["B", "I","N","G","O" ],
+    [],
+    [],
+    [],
+    [],
+    [],
+]
+#remplacer cases par "x"
+jeton = input("Place le jeton à la case nommer", )
+
+#ligne gagnante
+
+while True:
+    if x * 5  in liste_combinaisons:
+        print("BINGO gagnant!")
+    elif randrange(0 , 60) == 0:
+        input(random.choice(grille))
+    elif random.choice(grille) in carte_joueur:
+        input() in grille
+        print("Pas encore de BINGO.")
+    else :
+        print(x in combinaison_pigee)
+
+    break
+"""
