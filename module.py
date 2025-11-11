@@ -67,8 +67,8 @@ def placer_jeton(combi: str, grille: list[list[bool]], carte_joueur:str):
     for x in grille:
         print(x)
 
-    if combi in grille:
-        return carte_joueur # nouvelle carte avec le jeton
+    if combi in carte_joueur:
+        return x in carte_joueur # nouvelle carte avec le jeton
     else:
         print("pas de combinaison valide pour ce tour ")
         return carte_joueur
@@ -112,21 +112,21 @@ def bingo_gagnant(c_joueur :list[list]):
     #Ligne Vertical
     for i in range(5):
         if c_joueur[0][i] == str and c_joueur[1][i] == str and c_joueur[2][0] == str and c_joueur[3][0] == str and c_joueur[4][0] == str :
-            rangee_gagnate = True
+            colonne_gagnante = True
         else :
-           rangee_gagnate = False
+          colonne_gagnante= False
 
     #Ligne Diagonal gauche:
     if c_joueur[4][4] == str and c_joueur[3][3] == str and c_joueur[2][2] == str and c_joueur[1][1] == str and c_joueur[0][0] == str :
-        diagonale_gagnante = True
+        colonne_gagnante = True
     else:
-        diagonale_gagnante = False
+        colonne_gagnante = False
 
     #Ligne Diagonale droite:
     if c_joueur[0][5] == str and c_joueur[2][4] == str and c_joueur[3][3] == str and c_joueur[2][3]== str and c_joueur[1][4] :
-        diagonale_gagnante = True
+        colonne_gagnante = True
     else :
-        diagonale_gagnante = False
+        colonne_gagnante = False
 
 
 
