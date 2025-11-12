@@ -154,3 +154,4 @@ def test_bingo_gagnant(carte_joueur, resultat_attendu):
 
     #Asssert
     assert resultat_obtenu == resultat_attendu
+    #

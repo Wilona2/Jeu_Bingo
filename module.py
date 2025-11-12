@@ -120,3 +120,4 @@ def bingo_gagnant(c_joueur :list[list]):
         return "BINGO gagant!"
     else :
         return "Pas encore de BINGO."
+    #
