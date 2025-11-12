@@ -71,7 +71,7 @@ placer_jeton(combi_pigee: str, carte: list[list[str and int]]) -> list[list[str 
     ---------------------------------------
     Demander au joueur de placer son jeton au bon endroit (choisir la bonne colonne et la bonne ligne)
     Si combi_pigee n'existe pas dans la carte du joueur, le joueur doit répondre avec 'x' (ou autre symbole)
-    Si le joueur ne choisit pas la bonne réponse, on lance un message d'erreur 
+    Si le joueur ne choisit pas la bonne réponse, on lance un message d'erreur *******
     Si le joueur choisit le bon endroit, on remplace le chiffre assigné à cette case par un jeton 
     (o, *, peu importe tant que ce n'est pas un chiffre)
     Return la carte bingo du joueur avec son nouveau jeton (ou inchangée si la combinaison n'existe pas 
