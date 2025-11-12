@@ -2,7 +2,7 @@ import pytest
 from module import *
 
 #test pour la fonction placer_jeton()
-def test_placer_jeton1(combi, carte, reponse_lettre, reponse_ligne, resultat_attendu):
+def test_placer_jeton1():
     #Arrange
     combi = "B-12"
     carte = [['B', 'I', 'N', 'G', 'O'],
@@ -24,7 +24,7 @@ def test_placer_jeton1(combi, carte, reponse_lettre, reponse_ligne, resultat_att
     #Assert
     assert resultat_obtenu == resultat_attendu
 
-def test_placer_jeton2(combi, carte, reponse_lettre, reponse_ligne, resultat_attendu):
+def test_placer_jeton2():
     # Arrange
     combi = "B-12"
     carte = [['B', 'I', 'N', 'G', 'O'],
@@ -46,7 +46,7 @@ def test_placer_jeton2(combi, carte, reponse_lettre, reponse_ligne, resultat_att
     # Assert
     assert resultat_obtenu == resultat_attendu
 
-def test_placer_jeton3(combi, carte, reponse_lettre, reponse_ligne, resultat_attendu):
+def test_placer_jeton3():
     # Arrange
     combi = "B-12"
     carte = [['B', 'I', 'N', 'G', 'O'],
@@ -68,7 +68,7 @@ def test_placer_jeton3(combi, carte, reponse_lettre, reponse_ligne, resultat_att
     # Assert
     assert resultat_obtenu == resultat_attendu
 
-def test_placer_jeton4(combi, carte, reponse_ligne, resultat_attendu):
+def test_placer_jeton4():
     # Arrange
     combi = "B-12"
     carte = [['B', 'I', 'N', 'G', 'O'],
@@ -89,7 +89,7 @@ def test_placer_jeton4(combi, carte, reponse_ligne, resultat_attendu):
     # Assert
     assert resultat_obtenu == resultat_attendu
 
-def test_placer_jeton5(combi, carte, reponse_ligne, resultat_attendu):
+def test_placer_jeton5():
     # Arrange
     combi = "B-12"
     carte = [['B', 'I', 'N', 'G', 'O'],
