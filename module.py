@@ -61,23 +61,34 @@ def placer_jeton(combi: str, carte_joueur : list[list])-> list[list]:
     :param combi : combinaison
     :return: la carte bingo du joueur avec modification (jeton)
     """
-    x = 'x'
+    #x = 'x'
     combi = combi.split("-")
     combi.pop(0)
     combi = int(combi[0])
     print(combi)
     # Afficher le jeton sur la grille
-    for x in range(len(carte_joueur)):
-        if combi in carte_joueur:
-            for i in range(len(carte_joueur)):
-                for j in range(len(carte_joueur[i])):
-                    if carte_joueur == combi:
-                        carte_joueur[i][j] = x
+    index = 0
+    for i in range(len(carte_joueur)):
+        if combi in carte_joueur[i]:
+            carte_joueur[i][index] = 'x'
+        index += 1
+
+
+    """
+                for i in range(len(carte_joueur)):
+        for j in range(len(carte_joueur[i])):
+            if carte_joueur == combi:
+                carte_joueur[i][j] = 'x'
+                print(carte_joueur[i][j])
+    """
 
 
 
-        if combi not in carte_joueur:
-            print("Pas de combinaison valide pour ce tour")
+
+
+
+       # if combi not in carte_joueur:
+           # print("Pas de combinaison valide pour ce tour")
 
 
     return carte_joueur
