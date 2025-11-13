@@ -62,17 +62,24 @@ def placer_jeton(combi: str, carte_joueur : list[list])-> list[list]:
     :return: la carte bingo du joueur avec modification (jeton)
     """
     x = 'x'
-
+    combi = combi.split("-")
+    combi.pop(0)
+    combi = int(combi[0])
+    print(combi)
     # Afficher le jeton sur la grille
     for x in range(len(carte_joueur)):
-        if combi not  in carte_joueur:
+        if combi in carte_joueur:
+            for i in range(len(carte_joueur)):
+                for j in range(len(carte_joueur[i])):
+                    if carte_joueur == combi:
+                        carte_joueur[i][j] = x
+
+
+
+        if combi not in carte_joueur:
             print("Pas de combinaison valide pour ce tour")
-        else :
-            for combi in carte_joueur:
-                for i in range(len(carte_joueur)):
-                    for j in range(len(carte_joueur[i])):
-                        if carte_joueur == combi:
-                            carte_joueur[i][j] = x
+
+
     return carte_joueur
 
 #Fonction qui détermine si on a une ligne BINGO gagnante
@@ -100,10 +107,10 @@ def bingo_gagnant(c_joueur :list[list]):
         if c_joueur[1][i] == str and c_joueur[2][i] == str and c_joueur[3][0] == str and c_joueur[4][0] == str and c_joueur[5][0] == str :
             colonne_gagnante = True
         else :
-          colonne_gagnante= False
+            colonne_gagnante= False
 
     #Ligne Diagonal gauche:
-    if c_joueur[5][5] == str and c_joueur[4][1] == str and c_joueur[2][3] == str and c_joueur[3][2] == str and c_joueur[4][1] == str :
+    if c_joueur[0][5] == str and c_joueur[4][1] == str and c_joueur[2][3] == str and c_joueur[3][2] == str and c_joueur[4][1] == str :
         colonne_gagnante = True
     else:
         colonne_gagnante = False
