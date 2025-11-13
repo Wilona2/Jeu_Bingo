@@ -11,14 +11,13 @@ def test_placer_jeton1():
              [15, 23, '*', 46, 74],
              [10, 26, 31, 55, 66],
              [3, 27, 32, 57, 61]]
-    reponse_lettre = "B"
-    reponse_ligne = 2
+
     resultat_attendu = [['B', 'I', 'N', 'G', 'O'],
-             [8, 30, 33, 58, 65],
-             ['x', 17, 45, 51, 62],
-             [15, 23, '*', 46, 74],
-             [10, 26, 31, 55, 66],
-             [3, 27, 32, 57, 61]]
+                         [8, 30, 33, 58, 65],
+                         ['x', 17, 45, 51, 62],
+                         [15, 23, '*', 46, 74],
+                         [10, 26, 31, 55, 66],
+                         [3, 27, 32, 57, 61]]
     #Act
     resultat_obtenu = placer_jeton(combi, carte)
     #Assert
@@ -29,18 +28,12 @@ def test_placer_jeton2():
     combi = "B-12"
     carte = [['B', 'I', 'N', 'G', 'O'],
              [8, 30, 33, 58, 65],
-             [12, 17, 45, 51, 62],
+             [7, 17, 45, 51, 62],
              [15, 23, '*', 46, 74],
              [10, 26, 31, 55, 66],
              [3, 27, 32, 57, 61]]
-    reponse_lettre = "B"
-    reponse_ligne = 3
-    resultat_attendu = [['B', 'I', 'N', 'G', 'O'],
-                         [8, 30, 33, 58, 65],
-                         ['x', 17, 45, 51, 62],
-                         [15, 23, '*', 46, 74],
-                         [10, 26, 31, 55, 66],
-                         [3, 27, 32, 57, 61]] #avec message d'erreur
+
+    resultat_attendu = carte
     # Act
     resultat_obtenu = placer_jeton(combi, carte)
     # Assert
@@ -48,63 +41,20 @@ def test_placer_jeton2():
 
 def test_placer_jeton3():
     # Arrange
-    combi = "B-12"
+    combi = "G-55"
     carte = [['B', 'I', 'N', 'G', 'O'],
              [8, 30, 33, 58, 65],
              [6, 17, 45, 51, 62],
              [15, 23, '*', 46, 74],
              [10, 26, 31, 55, 66],
              [3, 27, 32, 57, 61]]
-    reponse_lettre = "B"
-    reponse_ligne = 3
-    resultat_attendu = [['B', 'I', 'N', 'G', 'O'],
-                         [8, 30, 33, 58, 65],
-                         [6, 17, 45, 51, 62],
-                         [15, 23, '*', 46, 74],
-                         [10, 26, 31, 55, 66],
-                         [3, 27, 32, 57, 61]] #avec message d'erreur
-    # Act
-    resultat_obtenu = placer_jeton(combi, carte)
-    # Assert
-    assert resultat_obtenu == resultat_attendu
 
-def test_placer_jeton4():
-    # Arrange
-    combi = "B-12"
-    carte = [['B', 'I', 'N', 'G', 'O'],
-             [8, 30, 33, 58, 65],
-             [6, 17, 45, 51, 62],
-             [15, 23, '*', 46, 74],
-             [10, 26, 31, 55, 66],
-             [3, 27, 32, 57, 61]]
-    reponse_lettre = "x"
     resultat_attendu = [['B', 'I', 'N', 'G', 'O'],
                          [8, 30, 33, 58, 65],
                          [6, 17, 45, 51, 62],
                          [15, 23, '*', 46, 74],
-                         [10, 26, 31, 55, 66],
+                         [10, 26, 31, 'x', 66],
                          [3, 27, 32, 57, 61]]
-    # Act
-    resultat_obtenu = placer_jeton(combi, carte)
-    # Assert
-    assert resultat_obtenu == resultat_attendu
-
-def test_placer_jeton5():
-    # Arrange
-    combi = "B-12"
-    carte = [['B', 'I', 'N', 'G', 'O'],
-             [8, 30, 33, 58, 65],
-             [12, 17, 45, 51, 62],
-             [15, 23, '*', 46, 74],
-             [10, 26, 31, 55, 66],
-             [3, 27, 32, 57, 61]]
-    reponse_lettre = "x"
-    resultat_attendu = [['B', 'I', 'N', 'G', 'O'],
-                         [8, 30, 33, 58, 65],
-                         ['x', 17, 45, 51, 62],
-                         [15, 23, '*', 46, 74],
-                         [10, 26, 31, 55, 66],
-                         [3, 27, 32, 57, 61]] #avec message d'erreur
     # Act
     resultat_obtenu = placer_jeton(combi, carte)
     # Assert
