@@ -1,7 +1,6 @@
 import pytest
 from module import *
 
-#Wilona
 #test pour la fonction placer_jeton()
 def test_placer_jeton1(combi, carte, reponse_lettre, reponse_ligne, resultat_attendu):
     #Arrange
@@ -155,7 +154,3 @@ def test_bingo_gagnant(carte_joueur, resultat_attendu):
 
     #Asssert
     assert resultat_obtenu == resultat_attendu
-
-
-def test_creer_liste_combinaisons(resultat_attendu ,liste_combinaisons  ):
-
