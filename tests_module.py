@@ -2,7 +2,7 @@ import pytest
 from module import *
 
 #test pour la fonction placer_jeton()
-def test_placer_jeton1(combi, carte, reponse_lettre, reponse_ligne, resultat_attendu):
+def test_placer_jeton1():
     #Arrange
     combi = "B-12"
     carte = [['B', 'I', 'N', 'G', 'O'],
@@ -24,7 +24,7 @@ def test_placer_jeton1(combi, carte, reponse_lettre, reponse_ligne, resultat_att
     #Assert
     assert resultat_obtenu == resultat_attendu
 
-def test_placer_jeton2(combi, carte, reponse_lettre, reponse_ligne, resultat_attendu):
+def test_placer_jeton2():
     # Arrange
     combi = "B-12"
     carte = [['B', 'I', 'N', 'G', 'O'],
@@ -46,7 +46,7 @@ def test_placer_jeton2(combi, carte, reponse_lettre, reponse_ligne, resultat_att
     # Assert
     assert resultat_obtenu == resultat_attendu
 
-def test_placer_jeton3(combi, carte, reponse_lettre, reponse_ligne, resultat_attendu):
+def test_placer_jeton3():
     # Arrange
     combi = "B-12"
     carte = [['B', 'I', 'N', 'G', 'O'],
@@ -68,7 +68,7 @@ def test_placer_jeton3(combi, carte, reponse_lettre, reponse_ligne, resultat_att
     # Assert
     assert resultat_obtenu == resultat_attendu
 
-def test_placer_jeton4(combi, carte, reponse_ligne, resultat_attendu):
+def test_placer_jeton4():
     # Arrange
     combi = "B-12"
     carte = [['B', 'I', 'N', 'G', 'O'],
@@ -89,7 +89,7 @@ def test_placer_jeton4(combi, carte, reponse_ligne, resultat_attendu):
     # Assert
     assert resultat_obtenu == resultat_attendu
 
-def test_placer_jeton5(combi, carte, reponse_ligne, resultat_attendu):
+def test_placer_jeton5():
     # Arrange
     combi = "B-12"
     carte = [['B', 'I', 'N', 'G', 'O'],
@@ -154,3 +154,41 @@ def test_bingo_gagnant(carte_joueur, resultat_attendu):
 
     #Asssert
     assert resultat_obtenu == resultat_attendu
+
+
+def test_creer_liste_combinaison():
+    #Arrange
+    combi = []
+    resultat_attendu = ([['B', 'I', 'N', 'G', 'O'],
+                         [6, 30, 33, 58, 65],
+                         [12, 21, 45, 51, 62],
+                         [7, 23, '*', 56, 70],
+                         [10, 26, 31, 55, 66],
+                         [3, 27, 32, 57, 61]])
+    print(combi)
+
+    #Act
+    resultat_obtenu = creer_liste_combinaisons()
+
+
+    # Assert
+    assert resultat_obtenu == resultat_attendu
+
+def test_generer_carte1():
+    #Arrange
+    carte_joueur = [['B', 'I', 'N', 'G', 'O'],
+                    [8, 30, 33, 58, 65],
+                    [12, 17, 45, 51, 62],
+                    [15, 23, '*', 46, 74],
+                    [10, 26, 31, 55, 66],
+                    [3, 27, 32, 57, 61]]
+
+    resultat_attendu = carte_joueur
+    #Act
+    resultat_obtenu = generer_carte(carte_joueur)
+
+    #Assert
+    assert resultat_obtenu == resultat_attendu
+
+
+

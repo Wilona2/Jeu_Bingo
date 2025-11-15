@@ -5,13 +5,12 @@
 
 #Plan de test pour la fonction placer_jeton()
 
-| combinaison_pigee | carte_joueur                                           | réponse_joueur | resultat_attendu                                                      | resultat_obtenu |
-|-------------------|--------------------------------------------------------|----------------|-----------------------------------------------------------------------|-----------------|
-| B-12              | (B-12 existe dans la liste carte_joueur, à la ligne 2) | B, 2           | (le chiffre à l'espace B2 est remplacé par un x)                      |                 |
-| B-12              | (B-12 existe dans la liste carte_joueur, à la ligne 2) | B, 3           | Message d'erreur... (le chiffre à l'espace B2 est remplacé par un x)  |                 |
-| B-12              | (B-12 n'existe pas dans la liste carte_joueur)         | B, 3           | Message d'erreur... (carte_joueur inchangée)                          |                 |
-| B-12              | (B-12 n'existe pas dans la liste carte_joueur)         | x              | carte_joueur inchangée                                                |                 |
-| B-12              | (B-12 existe dans la carte_joueur)                     | x              | Message d'erreur... (le chiffre à l'espace B2 est remplacé par un x)  |                 |
+| combinaison pigée | carte_joueur                                   | resultat_attendu                                  | resultat_obtenu |
+|-------------------|------------------------------------------------|---------------------------------------------------|-----------------|
+| B-12              | (B-12 existe dans la liste carte_joueur)       | carte joueur avec l'espace B-12 remplacé par un x |                 |
+| B-12              | (B-12 n'existe pas dans la liste carte_joueur) | carte joueur inchangée                            |                 |
+| G-55              | (G-55 existe dans la liste carte_joueur)       | carte joueur avec l'espace G-55 remplacé par un x |                 |
+
 
 #Plan de test pour la fonction bingo_gagnant()
 

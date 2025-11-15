@@ -26,7 +26,8 @@ def generer_carte(liste: list[str]) -> list[list]:
     carte_joueur = [["B", "I", "N", "G", "O" ], [], [], [], [], []]
 
     #Creer une liste contenant tous les chiffres possibles dans un jeu de BINGO
-    liste_chiffres = []
+   # liste_chiffres = []
+    liste_chiffres = list(range(1, 76))
     chiffre = 1
     for n in range(len(liste)):
         liste_chiffres.append(chiffre)
@@ -53,7 +54,7 @@ def generer_carte(liste: list[str]) -> list[list]:
     return carte_joueur
 
 #Maryam
-def placer_jeton(combi: str, carte_joueur : list[list[bool]])-> list[list]:
+def placer_jeton(combi: str, carte_joueur : list[list])-> list[list]:
     """
     Fonction pour placer le jeton x sur la grille(liste2D) BINGO
     :param x: le jeton a placer sur la grille
@@ -61,18 +62,45 @@ def placer_jeton(combi: str, carte_joueur : list[list[bool]])-> list[list]:
     :param combi : combinaison
     :return: la carte bingo du joueur avec modification (jeton)
     """
-    x = 'x'
-
+    #x = 'x'
+    combi = combi.split("-")
+    combi.pop(0)
+    combi = int(combi[0])
+    print(combi)
     # Afficher le jeton sur la grille
-    for x in range(len(carte_joueur)):
-        if combi not  in carte_joueur:
-            print("Pas de combinaison valide pour ce tour")
-        else :
-            for combi in carte_joueur:
+
+    for i in range(len(carte_joueur)):  # lignes
+        for j in range(len(carte_joueur[i])):  # colonnes
+            if combi == carte_joueur[i][j]:  # Si la valeur est la même
+                carte_joueur[i][j] = 'x'  # Remplacer par X
+            j += 1
+
+    """"
+    
+    index = 0
+    for i in range(len(carte_joueur)):
+        if combi in carte_joueur[i]:
+            carte_joueur[i][j] = 'x'
+        index += 1
+    """
+
+    """
                 for i in range(len(carte_joueur)):
-                    for j in range(len(carte_joueur[i])):
-                        if carte_joueur == combi:
-                            carte_joueur[i][j] = x
+        for j in range(len(carte_joueur[i])):
+            if carte_joueur == combi:
+                carte_joueur[i][j] = 'x'
+                print(carte_joueur[i][j])
+    """
+
+
+
+
+
+
+       # if combi not in carte_joueur:
+           # print("Pas de combinaison valide pour ce tour")
+
+
     return carte_joueur
 
 #Fonction qui détermine si on a une ligne BINGO gagnante
@@ -98,18 +126,18 @@ def bingo_gagnant(c_joueur :list[list]):
     #Ligne Vertical
     for i in range(5):
         if c_joueur[1][i] == str and c_joueur[2][i] == str and c_joueur[3][0] == str and c_joueur[4][0] == str and c_joueur[5][0] == str :
-            colonne_gagnante = True
+            colonne_gagnante= True
         else :
-          colonne_gagnante= False
+            colonne_gagnante = False
 
     #Ligne Diagonal gauche:
-    if c_joueur[5][5] == str and c_joueur[4][1] == str and c_joueur[2][3] == str and c_joueur[3][2] == str and c_joueur[4][1] == str :
+    if c_joueur[5][0] == str and c_joueur[4][1] == str and c_joueur[3][2] == str and c_joueur[2][3] == str and c_joueur[1][4] == str :
         colonne_gagnante = True
     else:
         colonne_gagnante = False
 
     #Ligne Diagonale droite:
-    if c_joueur[5][5] == str and c_joueur[3][4] == str and c_joueur[2][3] == str and c_joueur[2][1]== str and c_joueur[1][1] :
+    if c_joueur[5][4] == str and c_joueur[4][3] == str and c_joueur[3][2] == str and c_joueur[2][1]== str and c_joueur[1][1] :
         colonne_gagnante = True
     else :
         colonne_gagnante = False
@@ -120,4 +148,3 @@ def bingo_gagnant(c_joueur :list[list]):
         return "BINGO gagant!"
     else :
         return "Pas encore de BINGO."
-    #
