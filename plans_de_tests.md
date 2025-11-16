@@ -1,7 +1,23 @@
 #Plan de test pour la fonction generer_carte()
 #^^^^Vérifier la longueur de la liste
 
+| Carte aléatoire | carte_joueur | resultat_attendu | resultat_obtenu |
+|-----------------|--------------|------------------|-----------------|
+|                 |              |                  |                 |
+|                 |              |                  |                 |
+|                 |              |                  |                 |
+
+
 #Plan de test pour la fonction creer_liste_combinaisons()
+
+| liste combinaison             | resultat_attendu | resultat_obtenu |
+|-------------------------------|------------------|-----------------|
+| combinaison aléatoire ligne B | B: 1-15          | "B-3"           |
+| combinaison aléatoire ligne I | I: 16-30         | "I-22"          |
+| combinaison aléatoire ligne N | N:  31-45        | "N-36"          |
+| combinaison aléatoire ligne G | G: 46-60         | "G-54"          |
+| combinaison aléatoire ligne O | O: 61-72         | "O-70"          |
+
 
 #Plan de test pour la fonction placer_jeton()
 
