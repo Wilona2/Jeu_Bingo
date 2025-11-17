@@ -197,6 +197,6 @@ def test_generer_carte1():
 
     resultat_attendu = carte_joueur
     #Act
-    resultat_obtenu = generer_carte()
+    resultat_obtenu = generer_carte(carte_joueur)
     #Assert
     assert resultat_obtenu == resultat_attendu

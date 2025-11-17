@@ -67,25 +67,22 @@ def placer_jeton(combi: str, carte_joueur : list[list])-> list[list]:
     print(combi)
 
     # Afficher le jeton sur la grille
+
+    
     for i in range(5):  # lignes
         for j in range(5):  # Colonnes
             if combi == carte_joueur[i][j]:  # Si la valeur est la même
                 carte_joueur[i][j] = 'x'  # Remplacer par X
                 j += 1
 
-
-
-
-
-
-    """"
+    """
     index = 0
     for i in range(len(carte_joueur)):
         if combi in carte_joueur[i]:
+            
             carte_joueur[i][j] = 'x'
         index += 1
     """
-
     """
                 for i in range(len(carte_joueur)):
         for j in range(len(carte_joueur[i])):
@@ -111,7 +108,7 @@ def bingo_gagnant(c_joueur :list[list]):
     """
     #Ligne Horizontale
     for i in range(5):
-        if c_joueur[i][1] == str and c_joueur[i][2] == str and c_joueur[i][3] == str and c_joueur[i][4] == str and c_joueur[i][5] == str :
+        if c_joueur[i][1] == "x" and c_joueur[i][2] == "x" and c_joueur[i][3] == "x" and c_joueur[i][4] == "x"  :
             colonne_gagnante = True
 
         else :
@@ -120,7 +117,7 @@ def bingo_gagnant(c_joueur :list[list]):
 
     #Ligne Vertical
     for i in range(5):
-        if c_joueur[1][i] == str and c_joueur[2][i] == str and c_joueur[3][0] == str and c_joueur[4][0] == str and c_joueur[5][0] == str :
+        if c_joueur[1][i] == "x" and c_joueur[2][i] == "x" and c_joueur[3][0] == "x" and c_joueur[4][0] == "x" and c_joueur[5][0] == "x" :
             colonne_gagnante = True
             """
             
@@ -131,13 +128,13 @@ def bingo_gagnant(c_joueur :list[list]):
             colonne_gagnante = False
 
     #Ligne Diagonal gauche:
-    if c_joueur[5][0] == str and c_joueur[4][1] == str and c_joueur[3][2] == str and c_joueur[2][3] == str and c_joueur[1][4] == str :
+    if c_joueur[5][0] == "x" and c_joueur[4][1] == "x" and c_joueur[3][2] == "x" and c_joueur[2][3] == "x" and c_joueur[1][4] == "x" :
         colonne_gagnante = True
     else:
         colonne_gagnante = False
 
     #Ligne Diagonale droite:
-    if c_joueur[5][4] == str and c_joueur[4][3] == str and c_joueur[3][2] == str and c_joueur[2][1]== str and c_joueur[1][1] :
+    if c_joueur[5][4] == "x" and c_joueur[4][3] == "x" and c_joueur[3][2] == "x" and c_joueur[2][1]== "x" and c_joueur[1][1] :
         colonne_gagnante = True
     else :
         colonne_gagnante = False
