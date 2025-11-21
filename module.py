@@ -73,7 +73,7 @@ def placer_jeton(combi: str, carte_joueur : list[list])-> list[list]:
         for j in range(5):  # Colonnes
             if combi == carte_joueur[i][j]:  # Si la valeur est la même
                 carte_joueur[i][j] = 'x'  # Remplacer par X
-                j += 1
+
 
     """
     index = 0
@@ -91,12 +91,6 @@ def placer_jeton(combi: str, carte_joueur : list[list])-> list[list]:
                 print(carte_joueur[i][j])
     """
 
-
-
-
-
-
-
     return carte_joueur
 
 #Maryam
@@ -106,42 +100,43 @@ def bingo_gagnant(c_joueur :list[list]):
     :param c_joueur: la carte BINGO du joueur
     :return: "BINGO gagnant!" ou "Pas encore de BINGO."
     """
+    sous_colonne = [l for l in range (list)]
+    for list in c_joueur[1:]:
+        for i in range(len(list)):
+            if
+    # verifier que list[i] == x pour toute list et i fixe
+    """
     #Ligne Horizontale
     for i in range(5):
         if c_joueur[i][1] == "x" and c_joueur[i][2] == "x" and c_joueur[i][3] == "x" and c_joueur[i][4] == "x"  :
             colonne_gagnante = True
+    """
 
-        else :
-            colonne_gagnante = False
-
-
+    """
     #Ligne Vertical
     for i in range(5):
         if c_joueur[1][i] == "x" and c_joueur[2][i] == "x" and c_joueur[3][0] == "x" and c_joueur[4][0] == "x" and c_joueur[5][0] == "x" :
             colonne_gagnante = True
-            """
-            
+    """
+    """
         elif all(c_joueur[i]== "x" for i in range(5)):
             return True
-        """
-        else :
-            colonne_gagnante = False
-
+    """
+    """
     #Ligne Diagonal gauche:
     if c_joueur[5][0] == "x" and c_joueur[4][1] == "x" and c_joueur[3][2] == "x" and c_joueur[2][3] == "x" and c_joueur[1][4] == "x" :
         colonne_gagnante = True
-    else:
-        colonne_gagnante = False
+
 
     #Ligne Diagonale droite:
     if c_joueur[5][4] == "x" and c_joueur[4][3] == "x" and c_joueur[3][2] == "x" and c_joueur[2][1]== "x" and c_joueur[1][1] :
         colonne_gagnante = True
-    else :
-        colonne_gagnante = False
 
-
-#Colonne Ganante
+    colonne_gagnante    = True
+    
+    #Colonne Ganante
     if colonne_gagnante == True :
         return "BINGO gagant!"
     else :
         return "Pas encore de BINGO."
+    """

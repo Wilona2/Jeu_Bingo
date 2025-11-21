@@ -141,6 +141,11 @@ def test_placer_jeton5():
       [10, 26, 31, 'x', 66],
       [3, 27, 32, 57, 'x']], "BINGO gagnant!"),
 
+    # le <x> se trouve a la position (1, 0)
+    # Verifier colonne
+    """
+    
+    """
     ([['B', 'I', 'N', 'G', 'O'],
       [8, 30, 33, 58, 'x'],
       [12, 17, 45, 'x', 62],
@@ -158,6 +163,8 @@ def test_placer_jeton5():
 def test_bingo_gagnant(carte_joueur, resultat_attendu):
     #Act
     resultat_obtenu = bingo_gagnant(carte_joueur)
+
+    # Verifier qu'on a <X> sur une ligne, une colonne ou une diagonale
 
     #Asssert
     assert resultat_obtenu == resultat_attendu
